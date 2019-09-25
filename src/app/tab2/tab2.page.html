@@ -1,9 +1,22 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab Two
+      Product
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+    <ion-row>
+      <ion-col 
+        *ngFor="let product of product"
+        >{{product.name}} <br>
+        {{product.url}} <br>
+        Description: {{product.description}}<br>
+        Price: {{product.price}}    
+        <ion-button (click)="onClickAdd()">+</ion-button>
+        <ion-text>{{quantity}}</ion-text>
+        <ion-button  (click)="onClickMinus()">-</ion-button>
+      </ion-col>
+    </ion-row>
+</ion-content>

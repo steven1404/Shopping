@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+import { ProductService } from '../product.service'
 
 @Component({
   selector: 'app-tab2',
@@ -7,6 +9,20 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
-  constructor() {}
+  product = []
+  quantity = 0
+  amount = 0
+
+  constructor(private productService: ProductService) {}
+
+  onClickAdd(){
+    this.quantity = this.quantity + 1
+  }
+
+  onClickMinus(){
+    if (this.quantity != 0){
+      this.quantity = this.quantity - 1
+    }
+  }
 
 }

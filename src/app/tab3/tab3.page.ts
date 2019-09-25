@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+import { ProductService } from '../product.service'
 
 @Component({
   selector: 'app-tab3',
@@ -6,7 +8,13 @@ import { Component } from '@angular/core';
   styleUrls: ['tab3.page.scss']
 })
 export class Tab3Page {
+  product = []
 
-  constructor() {}
+  quantity= 0;
 
+  constructor(private productService: ProductService) {}
+
+  delete(){
+
+  }
 }

@@ -1,9 +1,20 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab Three
+      My Shopping Cart
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+    <ion-row>
+        <ion-col 
+          *ngFor="let product of product"
+          >{{product.name}} <br>
+          {{quantity}} <br>
+          Price: {{product.price}}    
+          <ion-button (click)="delete()">Delete</ion-button>
+        </ion-col>
+      </ion-row>
+  
+</ion-content>
